@@ -5,7 +5,7 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.ensemble import RandomForestClassifier
 
 # Load dataset
-df = pd.read_csv(r"D:\AI_prediction_Hackthon\Student_Performance.csv")
+df = pd.read_csv("Student_Performance.csv")
 
 # Drop ID column
 df = df.drop("student_id", axis=1)
