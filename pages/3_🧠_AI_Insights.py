@@ -1,14 +1,29 @@
 import streamlit as st
 from google import genai
-import streamlit as st
+import os
+from dotenv import load_dotenv
 from utils.ui import apply_ui
+
 apply_ui()
 
 # =========================
-# 🔑 GEMINI CLIENT
+# 🔑 LOAD ENV (LOCAL)
 # =========================
-client = genai.Client(api_key="AIzaSyDkpyRB_v_g-1WiTxCLXgFI0CzmNpuRl40")
+load_dotenv()
 
+# =========================
+# 🔐 GET API KEY (SECURE)
+# =========================
+api_key = os.getenv("GEMINI_API_KEY")
+
+# =========================
+# 🚀 GEMINI CLIENT
+# =========================
+client = genai.Client(api_key=api_key)
+
+# =========================
+# PAGE CONFIG
+# =========================
 st.set_page_config(page_title="AI Study Coach", layout="wide")
 
 st.title("🧠 AI Study Coach")

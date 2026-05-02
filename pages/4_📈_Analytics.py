@@ -6,7 +6,7 @@ import streamlit as st
 
 st.title("📈 Data Analytics")
 
-df = pd.read_csv(r"D:\AI_prediction_Hackthon\Student_Performance.csv")
+df = pd.read_csv("Student_Performance.csv")
 
 fig, ax = plt.subplots()
 ax.scatter(df["study_hours"], df["final_grade"])
